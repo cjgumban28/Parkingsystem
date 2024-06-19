@@ -1,0 +1,31 @@
+body{
+    background-color: white;
+    font-family: arial;
+}
+
+.title{
+    display: block;
+    text-align: center;
+}
+
+#by-me{
+    margin: 0;;
+}
+.r1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: auto;
+    justify-items: center;
+}
+.r1c1{
+    text-align: center;
+}
+.r2c2{
+    text-align: center;
+}
+.form-item{
+    display: block;
+}
+form{
+    text-align: center;
+}

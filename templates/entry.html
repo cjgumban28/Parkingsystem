@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block body %}
+<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <img src="https://images.unsplash.com/photo-1621929747188-0b4dc28498d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
+              class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+              alt="Sample photo">
+
+            <div class="card-body text-center">
+                <h2 class="card-title">Car Entry and Customer Form</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Entry Form</title>
+</head>
+  
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form method="post" action="/entry">
+        <label for="Reg_num">Plate Number:</label>
+        <input type="text" name="Reg_num" required><br>
+
+        <label for="Customer_Name">Customer Name:</label>
+        <input type="text" name="Customer_Name" required><br>
+
+        <label for="Age">Age:</label>
+        <input type="text" name="Age" required><br>
+
+        <label for="Bill_Amount">Bill Amount:</label>
+        <input type="text" name="Bill_Amount" required><br>
+
+        <label for="Model_name">Model Name:</label>
+        <input type="text" name="Model_name" required><br>
+
+        <label for="Color">Color:</label>
+        <input type="text" name="Color" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+    {% if entry_data %}
+    <h2>Entered Details</h2>
+    <table border="1">
+        <tr>
+            <th>Registration Number</th>
+            <th>Customer Name</th>
+            <th>Age</th>
+            <th>Bill Amount</th>
+            <th>Model Name</th>
+            <th>Color</th>
+            <th>Entry Time</th>
+        </tr>
+        <tr>
+            <td>{{ entry_data.Reg_num }}</td>
+            <td>{{ entry_data.Customer_Name }}</td>
+            <td>{{ entry_data.Age }}</td>
+            <td>{{ entry_data.Bill_Amount }}</td>
+            <td>{{ entry_data.Model_name }}</td>
+            <td>{{ entry_data.Color }}</td>
+            <td>{{ entry_data.Entry_time }}</td>
+
+            <button type="submit">Back</button>
+        </tr>
+    </table>
+    {% endif %}
+</body>
+</html>
+{% endblock %}

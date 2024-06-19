@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <title>Car Data Dashboard</title>
+</head>
+<body>
+
+<h2>Car Data Dashboard</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Registration Number</th>
+        <th>Customer Name</th>
+        <th>Age</th>
+        <th>Bill Amount</th>
+        <th>Model Name</th>
+        <th>Color</th>
+        <th>Entry Time</th>
+    </tr>
+    {% for car in car_data %}
+    <tr>
+        <td>{{ car.id }}</td>
+        <td>{{ car.Reg_Num }}</td>
+        <td>{{ car.Customer_Name }}</td>
+        <td>{{ car.Age }}</td>
+        <td>{{ car.Bill_Amount }}</td>
+        <td>{{ car.Model_name }}</td>
+        <td>{{ car.Color }}</td>
+        <td>{{ car.Entry_time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

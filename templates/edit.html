@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Edit</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="hidden" name="id" value="{{ vehicle.id }}">
+        <label for="Reg_num">Registration Number:</label>
+        <input type="text" name="Reg_num" value="{{ vehicle.Reg_Num }}" required>
+        <br>
+        <label for="Customer_Name">Customer Name:</label>
+        <input type="text" name="Customer_Name" value="{{ vehicle.Name }}" required>
+        <br>
+        <label for="Age">Age:</label>
+        <input type="text" name="Age" value="{{ vehicle.Age }}" required>
+        <br>
+        <label for="Bill_Amount">Bill Amount:</label>
+        <input type="text" name="Bill_Amount" value="{{ vehicle.Bill_Amount }}" required>
+        <br>
+        <label for="Model_name">Model Name:</label>
+        <input type="text" name="Model_name" value="{{ vehicle.Model_name }}" required>
+        <br>
+        <label for="Color">Color:</label>
+        <input type="text" name="Color" value="{{ vehicle.Color }}" required>
+        <br>
+            <button type="submit">SAVE</button>
+    </form>
+</body>
+</html>

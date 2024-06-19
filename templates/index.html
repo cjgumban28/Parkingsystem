@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="d-flex justify-content-around">
+        <a href="/entry">ENTRY </a> 
+    </div>
+    <table class="table-dark table table-hover table-striped">
+        <tr>
+            <th>OWNER ID</th>
+            <th>MODEL</th>
+            <th>PLATE NUMBER</th>
+            <th>COLOR</th>
+            <th>ENTRY TIME</th>
+            <th>ACTION</th>
+            <th>ACTION</th>
+            <th>ACTION</th>
+            <th>STATUS</th>
+
+        </tr>
+
+        {% for vehicle in vehicles %}
+        <tr>
+            <td>{{vehicle['id']}}</td>
+            <td>{{vehicle['Model_name']}}</td>
+            <td>{{vehicle['Reg_num']}}</td>
+            <td>{{vehicle['Color']}}</td>
+            <td>{{vehicle['Entry_time']}}</td>
+            <td>
+                <a href="{{ url_for('delete', id=vehicle['id']) }}">DELETE</a>
+            </td>
+            <td>
+                <a href="{{ url_for('edit', id=vehicle['id']) }}">EDIT</a>
+            </td>
+            <td>
+                <a href="{{ url_for('view', id=vehicle.id) }}">VIEW</a>
+            </td>
+            <td>
+                {% if vehicle['status'] == 'Availability' %}
+                    <button class="btn btn-success">Availability</button>
+                {% else %}
+                    <button class="btn btn-danger">Occupied</button>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
